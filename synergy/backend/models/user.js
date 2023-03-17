@@ -30,28 +30,30 @@ const userSchema = new mongoose.Schema({
       },
     },
   },
-  teams: {
-    type: Array,
-    required: true,
-    trim: true,
-    default: 0,
-  },
-  is_leader_of: {
-    type: Array,
-    required: true,
-    trim: true,
-    default: 0,
-  },
-  //   total_classes: {
-  //     type: Number,
-  //     required: true,
-  //     trim: true,
-  //   },
-  profile_pic: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  // teams: {
+  //   type: Array,
+  //   required: true,
+  //   trim: true,
+  //   default: 0,
+  // },
+  // is_leader_of: {
+  //   type: Array,
+  //   required: true,
+  //   trim: true,
+  //   default: 0,
+  // },
+  teams: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
+    },
+  ],
+  is_leader_of: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
+    },
+  ],
 });
 
 const User = mongoose.model("User", userSchema);
