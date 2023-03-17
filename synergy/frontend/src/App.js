@@ -13,6 +13,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Registration />} />
             <Route path="/login" element={<Log />} />
+            <Route path="/teams" element={<Teams />} />
+
             {/* <Log /> */}
             {/* <Registration /> */}
           </Routes>
