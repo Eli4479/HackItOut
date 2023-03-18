@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
@@ -24,24 +23,11 @@ const userSchema = new mongoose.Schema({
     validate: {
       validator: function (v) {
         return (
-          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v) &&
-          v.endsWith("itbhu.ac.in")
+          /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(v)
         );
       },
     },
   },
-  // teams: {
-  //   type: Array,
-  //   required: true,
-  //   trim: true,
-  //   default: 0,
-  // },
-  // is_leader_of: {
-  //   type: Array,
-  //   required: true,
-  //   trim: true,
-  //   default: 0,
-  // },
   teams: [
     {
       type: mongoose.Schema.Types.ObjectId,
@@ -49,6 +35,12 @@ const userSchema = new mongoose.Schema({
     },
   ],
   is_leader_of: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Team",
+    },
+  ],
+  is_member_of: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Team",

@@ -10,16 +10,19 @@ const register = async (req, res) => {
     }
     else {
       const user = await User.create({
-        user_name,
+        username: user_name,
         email,
         password,
         confirm_password,
+        teams: [],
+        is_leader_of: [],
+        is_member_of: [],
       });
-      return res.status(201).json({ user });
+      return res.status(200).json({ user });
     }
 
   } catch (error) {
-    return res.status(500).json({ error: error.message });
+    return res.status(400).json({ error: error.message });
   }
 };
 

@@ -1,25 +1,40 @@
 const mongoose = require("mongoose");
-const user = require("./user");
 
 const teamSchema = new mongoose.Schema({
-  team_code: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-  },
-  team_name: {
+  name: {
     type: String,
     required: true,
     trim: true,
   },
-  users: [
+  code: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  members: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
   ],
+  leader: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
+  todos: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Todo",
+    },
+  ],
+  chats: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Chat",
+    },
+  ],
 });
+
 
 const Team = mongoose.model("Team", teamSchema);
 
