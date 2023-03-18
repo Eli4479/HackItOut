@@ -62,12 +62,6 @@ const Teams = () => {
                 </div>
 
                 <div className="w-full h-full p-4 m-8 overflow-y-auto ">
-<<<<<<< HEAD
-                    <div className="flex items-center justify-center p-8  ">
-                       
-=======
-                    <div className="flex items-center justify-center p-8 border-4 border-dotted">
->>>>>>> cc3756a01ddb1b9fd8892ebc9f0c6e75ff59b7d4
                         <div className="flex flex-col w-full">
                             {teams.map((team) => {
                                 return (
@@ -77,16 +71,11 @@ const Teams = () => {
                                 )
                             })}
                         </div>
-<<<<<<< HEAD
-                      
-
-=======
->>>>>>> cc3756a01ddb1b9fd8892ebc9f0c6e75ff59b7d4
                     </div>
                 </div>
-            </div>
+           
         </>
     )
-}
+};
 
 export default Teams
