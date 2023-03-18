@@ -41,12 +41,12 @@ function AddNew() {
 
   return (
     <>
-      <Wrapper className='p-4'>
-        <div className='container m-auto'>
+      <Wrapper className=' m-auto  w-screen h-screen bg-gray-900 p-4'>
+        <div className='container mt-60 '>
           <div className='max-w-xl m-auto'>
             <form >
               <label className='block my-8' htmlFor='title'>
-                <span className='text-gray-700'>Title</span>
+                <span className='text-white'>Title</span>
                 <input
                   className='block w-full mt-1 p-2.5 bg-white-100 border rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                   type='text'
@@ -59,7 +59,7 @@ function AddNew() {
                 />
               </label>
               <label className='block my-8' htmlFor='title'>
-                <span className='text-gray-700'>Assigning to</span>
+                <span className='text-white'>Assigning to</span>
                 <input
                   className='block w-full mt-1 p-2.5 bg-white-100 border rounded-md focus:border-gray-500 focus:bg-white focus:ring-0'
                   type='text'
@@ -76,7 +76,7 @@ function AddNew() {
                 <button
                   className={`${loading
                     ? 'bg-gray-200 cursor-not-allowed'
-                    : 'bg-blue-500 hover:bg-blue-600 text-white transition duration-300 ease-in-out'
+                    : 'bg-cyan-500 hover:bg-cyan-600 text-white transition duration-300 ease-in-out'
                     } font-semibold tracking-wider py-3 px-8 rounded-lg w-full`}
                   disabled={loading}
                   onClick={submit}>

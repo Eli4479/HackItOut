@@ -2,6 +2,7 @@ import React from 'react';
 import { FaHashtag, FaPlus, FaUserCircle } from 'react-icons/fa';
 import Modal from './modal';
 import { useState } from 'react';
+import Logo from './logoo.png';
 
 const Sidebar = ({ name, loc }) => {
   console.log(name);
@@ -13,7 +14,8 @@ const Sidebar = ({ name, loc }) => {
   return (
     <div className="flex bg-gray-100 flex-col h-screen justify-between">
       <div className="flex flex-col w-64  px-4 py-8 overflow-y-auto border-r">
-        <h2 className="text-3xl font-semibold text-center text-cyan-700">Synergy</h2>
+        {/* <h2 className="text-3xl font-semibold text-center text-cyan-700">Synergy</h2> */}
+        <img src={Logo} alt="Synergy logo" />
         <div className="flex flex-col justify-between mt-6">
           <aside>
             {
@@ -56,7 +58,7 @@ const Sidebar = ({ name, loc }) => {
         </div>
       </div>
 
-      <div className=" flex  items-center mb-0 w-64 bg-blue-900 text-white h-35 p-4 ">
+      <div className=" flex  items-center mb-0 w-64 bg-gray-900 text-white h-35 p-4 ">
         <FaUserCircle size={27} className='ml-4 ' /> <span className=" ml-4 font-medium "> {
           loc === 'team' ? name.username : name
         }</span>

@@ -61,7 +61,7 @@ export default function Log() {
             </label>
             <input
               type="email"
-              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-cyan-700 bg-white border rounded-md focus:border-cyan-400 focus:ring-cyan-300 focus:outline-none focus:ring focus:ring-opacity-40"
               onClick={(e) => {
                 setEmail(e.target.value);
               }
@@ -77,7 +77,7 @@ export default function Log() {
             </label>
             <input
               type="password"
-              className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              className="block w-full px-4 py-2 mt-2 text-cyan-700 bg-white border rounded-md focus:border-cyan-400 focus:ring-cyan-300 focus:outline-none focus:ring focus:ring-opacity-40"
               onClick={(e) => {
                 setPassword(e.target.value);
               }
@@ -85,7 +85,7 @@ export default function Log() {
             />
           </div>
           <div className="mt-6 flex justify-center text-center">
-            <div className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+            <div className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-cyan-700 rounded-md hover:bg-cyan-600 focus:outline-none focus:bg-blue-600"
               onClick={HandleSubmit}
             >
               Login
@@ -98,7 +98,7 @@ export default function Log() {
           Don't have an account?{" "}
           <a
             href="/register"
-            className="font-medium text-blue-600 hover:underline"
+            className="font-medium text-cyan-600 hover:underline"
           >
             Sign up
           </a>

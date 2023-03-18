@@ -30,13 +30,14 @@ const TaskList = ({ the_todos, team }) => {
 
   return (
 
-    <div class="bg-gray-900 h-screen w-screen items-center justify-center flex">
-      <card class="bg-gray-900 text-gray-200 mx-auto w-full rounded-lg">
-        <header class="  text-center text-cyan-600  font-bold flex   justify-center items-center  text-3xl ">
-          <div className="px-10 py-5  justify-center basis-1/2">{team.name}</div>
-          <div className="py-2 justify-center basis-1/2"></div>
+    <div class="bg-gray-900 flex h-screen w-screen justify-center items-center ">
+      <card class=" text-gray-200   w-full mx-auto rounded-lg">
+        <div className="p-2 uppercase  text-4xl  text-zinc-100  font-bold text-center">{team.name}</div>
+        <header class="  text-center text-cyan-500  font-semibold flex   justify-center items-center  text-3xl ">
+          <div className="px-10 py-5  justify-center basis-1/2">TASKS</div>
+          <div className="py-2 justify-center basis-1/2">STATUS</div>
         </header>
-        <main class="px-5 text-xl text-center overflow-scroll ">
+        <main class="px-5 text-xl text-center ">
           {the_todos.map((todo) => {
             return (
               <content key={todo._id} class="flex my-2 bg-gray-900 justify-center items-center w-full">
