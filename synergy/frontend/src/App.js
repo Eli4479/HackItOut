@@ -1,11 +1,10 @@
-import './App.css';
+import "./App.css";
 import Log from "./pages/login";
-import React from 'react';
+import React from "react";
 import Registration from "./pages/register";
-import Teams from "./pages/teams"
+import Teams from "./pages/teams";
 import Todo from "./pages/todo";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 
 function App() {
   return (
