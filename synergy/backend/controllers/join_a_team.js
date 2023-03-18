@@ -16,10 +16,12 @@ const joinTeam = async (req, res) => {
     if (!Teams) {
       return res.status(404).send("Team not found");
     }
-    user.is_member_of.push(Teams._id);
+    user.is_member_of.push(Teams[0]._id);
     await user.save();
-    Team.members.push(user_id);
-    await Team.save();
+    Teams[0].members.push(user_id);
+    await Teams[0].save();
+
+
     res.status(200).send("Team joined");
   }
   catch (err) {

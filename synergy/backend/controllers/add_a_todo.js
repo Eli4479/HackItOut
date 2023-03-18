@@ -14,7 +14,9 @@ const addATodo = async (req, res) => {
       return res.status(404).send("Team not found");
     }
     //  find the user with the name assigned_to in the team
-    const user = team.members.find((person) => person.name === assigned_to);
+    // const user = team.members.find((person) => person.name === assigned_to);
+
+    const user = await User.findOne({ name: assigned_to });
 
     if (!user) {
       return res.status(404).send("User not found");

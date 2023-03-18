@@ -25,7 +25,22 @@ const Teams = () => {
         const get_team_info = async (profile) => {
             let the_team = []
             console.log(profile.teams);
-            for (let team_id of profile.teams) {
+            console.log(profile.is_member_of);
+            for (let team_id of profile.is_member_of) {
+                console.log(team_id);
+                if (team_id === undefined || team_id === null) {
+                    continue;
+                }
+                let response = await fetch(`http://localhost:3000/api/user/teams/${team_id}`, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+                let data = await response.text();
+                let team_info = JSON.parse(data);
+                the_team.push(team_info);
+            } for (let team_id of profile.is_leader_of) {
                 console.log(team_id);
                 if (team_id === undefined || team_id === null) {
                     continue;
@@ -58,7 +73,7 @@ const Teams = () => {
 
             <div className="flex bg-gray-900 items-center justify-center">
                 <div>
-                    <Sidebar name={profile} />
+                    <Sidebar name={profile} loc='team' />
                 </div>
 
                 <div className="w-full h-full p-4 m-8 overflow-y-auto ">
