@@ -13,10 +13,10 @@ const login = async (req, res) => {
       }
     )
     if (profile) {
-      return res.status(201).json({ profile });
+      return res.status(200).json({ profile });
     }
     else {
-      return res.status(400).json({ message: "Invalid Credentials" });
+      return res.status(400).json({ error: "Invalid Credentials" });
     }
   }
   catch (error) {

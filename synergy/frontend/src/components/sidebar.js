@@ -3,7 +3,8 @@ import { FaHashtag, FaPlus, FaUserCircle } from 'react-icons/fa';
 import Modal from './modal';
 import { useState } from 'react';
 
-const Sidebar = () => {
+const Sidebar = ({ name }) => {
+  console.log(name);
   return (
 
     <div className="flex flex-col h-screen justify-between">
@@ -29,7 +30,7 @@ const Sidebar = () => {
         </div>
       </div>
       <div className=" flex  items-center mb-0 w-64 bg-blue-900 text-white h-35 p-4 ">
-        <FaUserCircle size={27} className='ml-4 ' /> <span className=" ml-4 font-medium "> Username</span>
+        <FaUserCircle size={27} className='ml-4 ' /> <span className=" ml-4 font-medium "> {name.username}</span>
       </div>
     </div>
   );

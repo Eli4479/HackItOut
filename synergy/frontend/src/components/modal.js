@@ -4,6 +4,52 @@ import { FaHashtag, FaPlus, FaUserCircle } from 'react-icons/fa';
 export default function Modal({ type }) {
 
   const [showModal, setShowModal] = React.useState(false);
+  const [teamName, setTeamName] = React.useState("");
+  const [teamPassword, setTeamPassword] = React.useState("");
+
+  const JoinATeam = async () => {
+    const profile_id = localStorage.getItem("profile_id");
+    let team = {
+      "teamcode": teamPassword
+    }
+    let response = await fetch(`http://localhost:3000/api/user/${profile_id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(team)
+    });
+    let data = await response.text();
+    let team_info = JSON.parse(data);
+    console.log(team_info);
+    setShowModal(false);
+    window.location.reload();
+
+
+  }
+
+  const createTeam = async () => {
+    const profile_id = localStorage.getItem("profile_id");
+    let team = {
+      "teamName": teamName,
+      "teamcode": teamPassword,
+      "members": [profile_id],
+      "is_leader_of": [profile_id]
+    }
+    console.log(team);
+    let response = await fetch(`http://localhost:3000/api/user/${profile_id}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(team)
+    });
+    let data = await response.text();
+    let team_info = JSON.parse(data);
+    console.log(team_info);
+    setShowModal(false);
+    window.location.reload();
+  }
   return (
     <>
       <button
@@ -13,7 +59,6 @@ export default function Modal({ type }) {
       >
         {type === 'Create Team' ? <FaPlus /> : <FaHashtag />}
         <span className="mx-4 font-medium ">{type}</span>
-        {/* {type} */}
       </button>
       {showModal ? (
         <>
@@ -39,8 +84,9 @@ export default function Modal({ type }) {
                                 Team Name
                               </label>
                               <input
-                                type="email"
+                                type="text"
                                 className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                onChange={(e) => { setTeamName(e.target.value) }}
                               />
                             </div>
                             <div className="mb-2">
@@ -53,10 +99,11 @@ export default function Modal({ type }) {
                               <input
                                 type="password"
                                 className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                onChange={(e) => { setTeamPassword(e.target.value) }}
                               />
                             </div>
                             <div className="mt-6 flex justify-center text-center">
-                              <div className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" to={'/profile'}>
+                              <div className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onClick={createTeam}>
                                 Create Team
                               </div>
                             </div>
@@ -91,10 +138,11 @@ export default function Modal({ type }) {
                               <input
                                 type="password"
                                 className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                onChange={(e) => { setTeamPassword(e.target.value) }}
                               />
                             </div>
                             <div className="mt-6 flex justify-center text-center">
-                              <div className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" to={'/profile'}>
+                              <div className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600" onClick={JoinATeam}>
                                 Join Team
                               </div>
                             </div>
