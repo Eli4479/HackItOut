@@ -11,7 +11,7 @@
   background-color:#FFFBFF;
   /* color:#0f084b ; */
   /* color:#38369A; */
-  color:blue;
+  color:#0e7490;
   border: none;
   /* border-radius: 45px; */
   /* border-radius: 2%; */
@@ -22,7 +22,7 @@
 }
 
 .btnn:hover {
-  background-color: #38369A;
+  background-color: #0e7490;
   box-shadow: 0px 10px 15px rgba(0, 50, 71, 0.4);
   color: #FFFBFF;
   transform:translateY(2px);

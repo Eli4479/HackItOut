@@ -8,15 +8,14 @@ const Teams = () => {
     return (
         <>
 
-            <div className="flex items-center justify-center">
+            <div className="flex bg-gray-900 items-center justify-center">
                 <div>
                     <Sidebar />
                 </div>
 
                 <div className="w-full h-full p-4 m-8 overflow-y-auto ">
-                    <div className="flex items-center justify-center p-8 border-4 border-dotted">
-                        {/* for(let i=0; i<teamNumber.length(); i++)
-                        { */}
+                    <div className="flex items-center justify-center p-8  ">
+                       
                         <div className="flex flex-col w-full">
                             <Buttons />
                             <Buttons />
@@ -25,7 +24,7 @@ const Teams = () => {
                             <Buttons />
                             <Buttons />
                         </div>
-                        {/* } */}
+                      
 
                     </div>
                 </div>
