@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const user = require("./user");
-const team = require("./team");
+
 
 const todoSchema = new mongoose.Schema({
   todo_name: {

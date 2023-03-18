@@ -2,7 +2,7 @@ const express = require("express");
 const Router = express.Router();
 const User = require("../models/user");
 const Team = require("../models/teams");
-const Todo = require("../models/todo");
+const Todo = require("../models/todos");
 
 
 const addATodo = async (req, res) => {
@@ -13,10 +13,16 @@ const addATodo = async (req, res) => {
     if (!team) {
       return res.status(404).send("Team not found");
     }
+    //  find the user with the name assigned_to in the team
+    const user = team.members.find((person) => person.name === assigned_to);
+
+    if (!user) {
+      return res.status(404).send("User not found");
+    }
     const todo = await Todo.create({
       todo_name,
       status: "Incomplete",
-      assigned_to,
+      assigned_to: user._id,
     });
     await todo.save();
     team.todos.push(todo._id);
@@ -27,3 +33,6 @@ const addATodo = async (req, res) => {
     res.status(404).send(err);
   }
 };
+
+
+exports.addATodo = addATodo;

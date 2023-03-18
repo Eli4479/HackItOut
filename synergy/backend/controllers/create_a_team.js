@@ -5,7 +5,6 @@ const Team = require("../models/teams");
 
 const createTeam = async (req, res) => {
   try {
-
     const { teamName, teamcode } = req.body;
     const user_id = req.params.id;
     const user = await User.findById(user_id);
