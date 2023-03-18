@@ -1,0 +1,29 @@
+.btnn {
+  margin: 10px auto;
+  padding: 20px;
+  width: 100%;
+  height: fit-content;
+  /* font-family: 'Roboto', sans-serif; */
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+  background-color:#FFFBFF;
+  /* color:#0f084b ; */
+  /* color:#38369A; */
+  color:blue;
+  border: none;
+  /* border-radius: 45px; */
+  /* border-radius: 2%; */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btnn:hover {
+  background-color: #38369A;
+  box-shadow: 0px 10px 15px rgba(0, 50, 71, 0.4);
+  color: #FFFBFF;
+  transform:translateY(2px);
+}
