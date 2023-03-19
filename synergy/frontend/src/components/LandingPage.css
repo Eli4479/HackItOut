@@ -1,26 +1,22 @@
-body {
+/* .b {
   background-image: url("imggg1.jpg");
+  opacity: 0.65;
   background-size: cover;
   background-position: center;
-  position: relative; /* make sure the body element is positioned relative */
+  position: relative;
   text-align: center;
 }
 
-body::before {
+.b::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.65
-  ); /* set the background color and opacity as needed */
-  z-index: -1; /* make sure the pseudo-element is positioned behind the body content */
-}
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+} */
 /* .relative .cursive-text {
   display: inline-block;
   animation: write 1s ease-in-out forwards;
@@ -52,3 +48,47 @@ body::before {
     width: 100%;
   }
 }
+
+/* .bb {
+  opacity: 1;
+}
+.bc {
+  opacity: 1;
+}
+.bd {
+  opacity: 1;
+} */
+
+.landing-page {
+  background-image: url("imggg1.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  opacity: 0.95;
+}
+
+.landing-page:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* .bc {
+  position: relative;
+  z-index: 1;
+}
+
+.bd {
+  position: relative;
+  z-index: 1;
+} */

@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
 
 app.use("/api", router);
 
-mongoose.connect(process.env.MONGO_URI).then(() => { });
+mongoose.connect(process.env.MONGO_URI).then(() => {});
 const start = async () => {
   await mongoose
     .connect(process.env.MONGO_URI, {
