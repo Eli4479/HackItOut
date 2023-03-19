@@ -8,6 +8,8 @@ const { joinTeam } = require("../controllers/join_a_team");
 const { getTeamInfo } = require("../controllers/get_team_info");
 const { addATodo } = require("../controllers/add_a_todo");
 const { getUser } = require("../controllers/get_user_details");
+const { getTodo } = require("../controllers/get_todo");
+const { updateATodo } = require("../controllers/update_a_todo");
 
 Router.route("/register").post(register);//register
 Router.route("/login").post(login);//login
@@ -19,8 +21,8 @@ Router.route("/user/:id").put(joinTeam);//join team id of user
 
 Router.route("/user/teams/:id").get(getTeamInfo);//get team info of user
 Router.route("/user/teams/todo/:id").post(addATodo);//create todo id of team
-Router.route("/user/teams/todo/:id").put();//update todo id of todo
-Router.route("/user/teams/todo/:id").get();//get todo of a team id of team
+Router.route("/user/teams/todo/:id").put(updateATodo);//update todo id of todo
+Router.route("/user/teams/todos/:id").get(getTodo);//get todo of a team id of team
 
 
 

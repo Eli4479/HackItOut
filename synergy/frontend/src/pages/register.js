@@ -57,6 +57,7 @@ export default function Registration() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              value={email}
             />
           </div>
           <div className="mb-2">
@@ -72,6 +73,7 @@ export default function Registration() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              value={password}
 
             />
           </div>
@@ -88,6 +90,7 @@ export default function Registration() {
               onChange={(e) => {
                 setConfirmPassword(e.target.value);
               }}
+              value={confirmPassword}
             />
           </div>
           <div className="mb-2">
@@ -103,6 +106,7 @@ export default function Registration() {
               onChange={(e) => {
                 setUsername(e.target.value);
               }}
+              value={username}
             />
           </div>
           <div className="mt-6 flex justify-center text-center">

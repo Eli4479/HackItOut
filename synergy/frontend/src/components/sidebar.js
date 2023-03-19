@@ -6,8 +6,11 @@ import { useState } from 'react';
 const Sidebar = ({ name, loc }) => {
   console.log(name);
 
+  const log = () => {
+    localStorage.clear();
+    window.location.href = '/';
+  };
   return (
-
     <div className="flex bg-gray-100 flex-col h-screen justify-between">
       <div className="flex flex-col w-64  px-4 py-8 overflow-y-auto border-r">
         <h2 className="text-3xl font-semibold text-center text-cyan-700">Synergy</h2>
@@ -37,6 +40,13 @@ const Sidebar = ({ name, loc }) => {
                       type="button"
                     >
                       Todo
+                    </button>
+                    <button
+                      className="flex px-4 py-2 mt-5 w-full text-gray-600 rounded-md hover:bg-gray-200 items-center  font-bold uppercase text-sm  shadow hover:shadow-lg  focus:outline-none ease-linear transition-all duration-150"
+                      type="button"
+                      onClick={log}
+                    >
+                      Logout
                     </button>
                   </ul>
                 </>

@@ -41,12 +41,12 @@ const LandingPage = () => {
   return (
     <div
       className=" flex flex-col items-center justify-center h-screen landing-page"
-      // style={{
-      //   backgroundImage: "url('bg.png')",
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      //   backgroundRepeat: "no-repeat",
-      // }}
+    // style={{
+    //   backgroundImage: "url('bg.png')",
+    //   backgroundSize: "cover",
+    //   backgroundPosition: "center",
+    //   backgroundRepeat: "no-repeat",
+    // }}
     >
       <div className="content">
         <animated.h1
@@ -66,6 +66,9 @@ const LandingPage = () => {
         <animated.button
           className="bg-gray-700 border text-white font-bold py-2 px-4 rounded-lg hover:bg-black hover:text-white transition-all duration-300 ease-in-out bd"
           style={props2}
+          onClick={() => {
+            window.location.href = "/login";
+          }}
         >
           Get Started
         </animated.button>

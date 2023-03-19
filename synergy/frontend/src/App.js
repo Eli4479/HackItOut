@@ -7,6 +7,8 @@ import Todo from "./pages/todo";
 import video from "./components/video";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
+import AddNew from "./components/add";
+
 import "./components/LandingPage.css";
 
 function App() {
@@ -20,14 +22,14 @@ function App() {
               element={
                 <>
                   <LandingPage />
-                  {/* <Registration /> */}
-                  <video />
                 </>
               }
             />
+            <Route path="/register" element={<Registration />} />
             <Route path="/login" element={<Log />} />
             <Route path="/teams" element={<Teams />} />
             <Route path="/todo" element={<Todo />} />
+            <Route path="/add" element={<AddNew />} />
 
             {/* <Log /> */}
             {/* <Registration /> */}
