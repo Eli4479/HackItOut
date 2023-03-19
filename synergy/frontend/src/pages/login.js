@@ -66,7 +66,6 @@ export default function Log() {
                 setEmail(e.target.value);
               }
               }
-              value={email}
             />
           </div>
           <div className="mb-2">
@@ -83,7 +82,6 @@ export default function Log() {
                 setPassword(e.target.value);
               }
               }
-              value={password}
             />
           </div>
           <div className="mt-6 flex justify-center text-center">
